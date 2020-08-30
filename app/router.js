@@ -6,4 +6,15 @@
 module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
+  router.get('/prodution', controller.prodution.index)
+  // 接收get请求
+  router.get('/prodution/detail', controller.prodution.detail)
+  // 接收动态路由参数
+  router.get('/prodution/detail2/:id', controller.prodution.detail2)
+  // 接收post请求
+  router.post('/prodution/create', controller.prodution.create)
+  // 接收put请求
+  router.put('/prodution/update/:id/:sub', controller.prodution.update)
+  // 接收delete请求
+  router.delete('/prodution/delete/:id', controller.prodution.delete)
 };
