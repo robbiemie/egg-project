@@ -44,7 +44,9 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
+    // 返回纯文本
     ctx.body = 'hello, egg';
+    // 返回
   }
 }
 module.exports = HomeController;
@@ -70,3 +72,39 @@ module.exports = HomeController;
 ```
 
 ## Service(服务)
+
+```js
+const Service = require("egg").Service
+
+class ProdutionService extends Service {
+  async index() {
+    return {
+      id: 100,
+      name: "测试"
+    }
+  }
+}
+
+module.exports = ProdutionService
+```
+
+
+## 模板引擎
+
+```js
+// config/plugin.js
+// 插件配置
+exports.ejs = {
+  enable: true,
+  package: 'egg-view-ejs',
+};
+// config/config.default.js
+// 模板配置
+  config.view = {
+    mapping: {
+      '.html': 'ejs',
+    },
+  };
+```
+
+https://github.com/eggjs/egg-view-nunjucks

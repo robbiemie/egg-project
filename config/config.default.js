@@ -1,7 +1,6 @@
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
-
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -18,12 +17,17 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
-  exports.security = {
+  config.security = {
     csrf: {
       enable: false,
     },
   };
-
+  config.view = {
+    defaultViewEngine: "",
+    mapping: {
+      '.html': 'ejs',
+    },
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
