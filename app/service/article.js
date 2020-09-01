@@ -12,6 +12,11 @@ class ArticleService extends Service {
       return null
     }
   }
+  async lists() {
+    const { app } = this
+    const result = await app.mysql.select('user')
+    return result
+  }
 }
 
 module.exports = ArticleService

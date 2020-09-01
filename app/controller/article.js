@@ -22,6 +22,16 @@ class ArticleController extends Controller {
       }
     }
   }
+  async lists() {
+    const { ctx } = this
+    const result = await ctx.service.article.lists() 
+    return ctx.body = {
+      status: 200,
+      data: {
+        list: result
+      }
+    }
+  }
 }
 
 module.exports = ArticleController

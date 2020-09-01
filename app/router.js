@@ -8,6 +8,8 @@ module.exports = app => {
   router.get('/', controller.home.index);
   // 发布文章
   router.post('/article/create', controller.article.create)
+  // 获取列表
+  router.get('/article/lists', controller.article.lists)
   router.get('/prodution', controller.prodution.index)
   // 接收get请求
   router.get('/prodution/detail', controller.prodution.detail)
