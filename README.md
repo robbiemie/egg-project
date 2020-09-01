@@ -108,3 +108,33 @@ exports.ejs = {
 ```
 
 https://github.com/eggjs/egg-view-nunjucks
+
+
+## 连接数据库
+
+- [egg-mysql](https://www.npmjs.com/package/egg-mysql)
+
+```js
+// config/plugin.js
+// 插件配置
+exports.mysql = {
+  enable: true,
+  package: 'egg-mysql',
+};
+// config/config.default.js
+// DB 配置
+config.mysql = {
+  // database configuration
+  client: {
+    // host
+    host: 'localhost',
+    // port
+    port: '3306',
+    // username
+    user: 'root',
+    // password
+    password: '123',
+    // database
+    database: 'blog',    
+  },
+```

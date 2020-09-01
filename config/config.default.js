@@ -28,6 +28,26 @@ module.exports = appInfo => {
       '.html': 'ejs',
     },
   };
+  // mysql
+  config.mysql = {
+    // database configuration
+    client: {
+      // host
+      host: 'localhost',
+      // port
+      port: '3306',
+      // username
+      user: 'root',
+      // password
+      password: '123',
+      // database
+      database: 'blog',    
+    },
+    // load into app, default is open
+    app: true,
+    // load into agent, default is close
+    agent: false,
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
