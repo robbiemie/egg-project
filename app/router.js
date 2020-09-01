@@ -6,6 +6,8 @@
 module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
+  // 发布文章
+  router.post('/article/create', controller.article.create)
   router.get('/prodution', controller.prodution.index)
   // 接收get请求
   router.get('/prodution/detail', controller.prodution.detail)
